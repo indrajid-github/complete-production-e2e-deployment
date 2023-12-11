@@ -7,7 +7,7 @@ spec:
     app: fleetman
     ver: 'ver0'
   ports:
-  - port: 80
+  - port: 8080
     targetPort: tcp-webapp
     nodePort: 30080
   type: NodePort  
