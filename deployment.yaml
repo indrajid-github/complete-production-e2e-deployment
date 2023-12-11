@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complete-prodcution-e2e-pipeline 
+spec:
+  minReadySeconds: 30
+  revisionHistoryLimit: 5
+  replicas: 5
+  selector:
+    matchLabels:
+      app: fleetman
+    matchExpressions:
+    - key: ver
+      operator: In
+      values:
+      - 'ver0'
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: fleetman
+        tier: dev
+        ver: 'ver0'
+    spec:
+      containers:
+      - name: webapp-new
+        image: uriyapraba/complete-prodcution-e2e-pipeline:1.0.0-17
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+          name: tcp-webapp
+
+
+
