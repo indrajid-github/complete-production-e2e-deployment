@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-srv
+spec:
+  selector:
+    app: fleetman
+    ver: 'ver0'
+  ports:
+  - port: 80
+    targetPort: tcp-webapp
+    nodePort: 30080
+  type: NodePort  
