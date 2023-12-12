@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: webapp-new
-        image: uriyapraba/complete-prodcution-e2e-pipeline:1.0.0-17
+        image: uriyapraba/complete-prodcution-e2e-pipeline:1.0.0-20
         ports:
         - containerPort: 8080
           protocol: TCP
