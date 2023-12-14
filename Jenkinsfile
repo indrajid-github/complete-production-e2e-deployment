@@ -51,7 +51,7 @@ pipeline
                     """
                     withDockerRegistry(credentialsId: 'github_tocken') 
                     {
-                        git push https://github.com/indrajid-github/complete-production-e2e-deployment.git main
+                        sh 'git push https://github.com/indrajid-github/complete-production-e2e-deployment.git main'
                     }                
             }
         }
