@@ -42,9 +42,7 @@ pipeline
         stage("push the updated image tag")
         {
             steps
-            {
-                script
-                {
+            {              
                     sh """
                         git config --global user.name "Indrajith"
                         git config --global user.mail "mailtoindrajith@gmail.com"
@@ -54,8 +52,7 @@ pipeline
                     withDockerRegistry(credentialsId: 'github_tocken') 
                     {
                         git push https://github.com/indrajid-github/complete-production-e2e-deployment.git main
-                    }
-                }
+                    }                
             }
         }
     }
