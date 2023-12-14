@@ -49,10 +49,13 @@ pipeline
                         git add .
                         git commit -m "${IMAGE_TAG} updated"
                     """
+                script
+                {
                     withDockerRegistry(credentialsId: 'github_tocken') 
                     {
                         sh 'git push https://github.com/indrajid-github/complete-production-e2e-deployment.git main'
-                    }                
+                    }
+                }   
             }
         }
     }
