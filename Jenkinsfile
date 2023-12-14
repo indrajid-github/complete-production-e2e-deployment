@@ -51,7 +51,7 @@ pipeline
                     """
                 script
                 {
-                    withDockerRegistry(credentialsId: 'github_tocken') 
+                    withDockerRegistry(credentialsId: 'dockerhub') 
                     {
                         sh 'git push https://github.com/indrajid-github/complete-production-e2e-deployment.git main'
                     }
