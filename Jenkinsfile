@@ -46,17 +46,14 @@ pipeline
                 
                     sh """
                         git config --global user.name "Indrajith"
-                        git config --global user.mail "mailtoindrajith@gmail.com"
+                        git config --global user.email "mailtoindrajith@gmail.com"
                         git add .
                         git commit -m "new build image tag updated"
                     """
-                script
-                {
                     withCredentials([gitUsernamePassword(credentialsId: 'github_tocken', gitToolName: 'Default')]) 
                     {
                         sh "git push origin main"
                     }
-                }
             }
         }
     }
