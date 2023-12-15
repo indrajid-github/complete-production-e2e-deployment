@@ -42,20 +42,19 @@ pipeline
         stage("push the updated image tag")
         {
             steps
-            {              
+            {
+                
                     sh """
                         git config --global user.name "Indrajith"
                         git config --global user.mail "mailtoindrajith@gmail.com"
                         git add .
                         git commit -m "${IMAGE_TAG} updated"
                     """
-                script
-                {
-                    withDockerRegistry(credentialsId: 'dockerhub') 
+                    withCredentials([gitUsernamePassword(credentialsId: 'github_tocken', gitToolName: 'Default')]) 
                     {
                         sh 'git push https://github.com/indrajid-github/complete-production-e2e-deployment.git main'
                     }
-                }   
+                
             }
         }
     }
