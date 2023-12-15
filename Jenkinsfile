@@ -54,7 +54,7 @@ pipeline
                 {
                     withCredentials([gitUsernamePassword(credentialsId: 'github_tocken', gitToolName: 'Default')]) 
                     {
-                        git push https://github.com/indrajid-github/complete-production-e2e-deployment main
+                        sh "git push https://github.com/indrajid-github/complete-production-e2e-deployment main"
                     }
                 }
             }
