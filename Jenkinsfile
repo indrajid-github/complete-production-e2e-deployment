@@ -21,11 +21,10 @@ pipeline
         {
             steps
             {
-                script
-                {
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], 
-                    userRemoteConfigs: [[url: 'https://github.com/indrajid-github/complete-production-e2e-deployment.git']])
-                }
+                checkout scmGit(branches: [[name: 'main']],
+                userRemoteConfigs: [
+                    [ url: 'https://github.com/indrajid-github/complete-production-e2e-deployment.git' ]
+                ])
             }
         }
         stage("update the deployment tag")
