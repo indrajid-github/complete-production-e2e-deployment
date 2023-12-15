@@ -50,11 +50,13 @@ pipeline
                         git add .
                         git commit -m "${IMAGE_TAG} updated"
                     """
+                script
+                {
                     withCredentials([gitUsernamePassword(credentialsId: 'github_tocken', gitToolName: 'Default')]) 
                     {
-                        sh "git push https://github.com/indrajid-github/complete-production-e2e-deployment main"
+                        git push https://github.com/indrajid-github/complete-production-e2e-deployment main
                     }
-                
+                }
             }
         }
     }
