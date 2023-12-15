@@ -48,7 +48,7 @@ pipeline
                         git config --global user.name "Indrajith"
                         git config --global user.mail "mailtoindrajith@gmail.com"
                         git add .
-                        git commit -m "${IMAGE_TAG} updated"
+                        git commit -m "new build image tag updated"
                     """
                 script
                 {
