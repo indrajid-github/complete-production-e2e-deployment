@@ -52,6 +52,7 @@ pipeline
                     """
                     withCredentials([gitUsernamePassword(credentialsId: 'github_tocken', gitToolName: 'Default')]) 
                     {
+                        sh "git branch -m main"
                         sh "git push -u origin main"
                     }
             }
