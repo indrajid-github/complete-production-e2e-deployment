@@ -23,7 +23,7 @@ pipeline
             {
                 checkout scmGit(branches: [[name: 'master']],
                 userRemoteConfigs: [
-                    [ url: 'https://github.com/indrajid-github/complete-production-e2e-deployment.git' ]
+                    [ url: 'https://github.com/indrajid-github/complete-e2e-deployment.git' ]
                 ])
             }
         }
