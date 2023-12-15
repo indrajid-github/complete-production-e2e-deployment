@@ -21,7 +21,7 @@ pipeline
         {
             steps
             {
-                checkout scmGit(branches: [[name: 'main']],
+                checkout scmGit(branches: [[name: 'master']],
                 userRemoteConfigs: [
                     [ url: 'https://github.com/indrajid-github/complete-production-e2e-deployment.git' ]
                 ])
@@ -51,8 +51,8 @@ pipeline
                     """
                     withCredentials([gitUsernamePassword(credentialsId: 'github_tocken', gitToolName: 'Default')]) 
                     {
-                        sh "git branch -m main"
-                        sh "git push -u origin main"
+                        
+                        sh "git push origin master"
                     }
             }
         }
